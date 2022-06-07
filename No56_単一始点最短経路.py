@@ -2,18 +2,18 @@
 import heapq
 
 V,E,r = map(int, input().split())
-G = [[] for _ in range(E)]
+G = [[] for _ in range(V)]
 
-#辺が0なら終了
-if E == 0:
-    print(0)
-    exit()
+# #辺が0なら終了
+# if E == 0:
+#     print(0)
+#     exit()
 
 # 有向隣接リストを作成
 for i in range(E):
     s,t,d = map(int, input().split())
     G[s].append((t,d)) #sからtへ進むときの重みd
-
+# print(G)
 Q = []
 INF = 10**10
 #最短距離を格納
