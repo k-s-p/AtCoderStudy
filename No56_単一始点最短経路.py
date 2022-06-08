@@ -30,10 +30,10 @@ while len(Q) != 0:
         continue
     
     for v in G[current_node]:
-        if distance[current_node] + v[1] < distance[v[0]]: 
-            distance[v[0]] = distance[current_node] + v[1] #最短距離更新
+        if cost + v[1] < distance[v[0]]: 
+            distance[v[0]] = cost + v[1] #最短距離更新
             #heapに追加
-            heapq.heappush(Q, (v[1], v[0]))
+            heapq.heappush(Q, (distance[v[0]], v[0]))
 
 for i in distance:
     if i == INF:
