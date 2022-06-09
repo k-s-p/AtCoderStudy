@@ -19,9 +19,13 @@ for i in range(V):
         d[i][j[0]] = j[1]
 
 for k in range(V): #kを中継する
-    for i in range(V):
-        for j in range(V):
-            d[i][j] = min(d[i][j], d[k][j] + d[i][k])
+    for i in range(V): #始点
+        if d[i][k] == INF:
+            continue
+        for j in range(V): #終点
+            if d[k][j] == INF:
+                continue
+            d[i][j] = min(d[i][j], d[i][k] + d[k][j])
 
 #負の閉路があるか判定
 ok = True
